@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-primary-950/20 dark:to-mint-900/10">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-primary-950/30">
         <Container>
           <div className="max-w-3xl">
             <div className="accent-line mb-8" />
@@ -33,7 +33,7 @@ export default function AboutPage() {
       </section>
 
       {/* Overview */}
-      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
+      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950">
         <Container>
           <div className="max-w-3xl">
             <h2 className="mb-6">{about.overview.title}</h2>
@@ -47,7 +47,7 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Rule */}
-      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-3xl">
             <h2 className="mb-6">{about.brandRule.title}</h2>
@@ -72,7 +72,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
+      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:to-neutral-900">
         <Container>
           <h2 className="mb-12">{about.values.title}</h2>
           
@@ -89,7 +89,7 @@ export default function AboutPage() {
       </section>
 
       {/* Company Info */}
-      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -109,18 +109,17 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary-700 via-primary-800 to-primary-900 dark:from-primary-900 dark:via-primary-950 dark:to-neutral-950">
+      <section className="py-16 md:py-24 bg-neutral-100 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/20 dark:to-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="text-white mb-4">Let's talk</h2>
-            <p className="text-primary-200 mb-8">
+            <h2 className="mb-4">Let&apos;s talk</h2>
+            <p className="text-neutral-600 dark:text-neutral-400 mb-8">
               Have a question or want to discuss how we might help your business? Start with a conversation.
             </p>
             <Button 
               href="/contact"
-              variant="outline"
+              variant="secondary"
               size="lg"
-              className="bg-white text-primary-900 border-white hover:bg-primary-50"
             >
               Get in touch
               <ArrowRight className="w-4 h-4 ml-2" />

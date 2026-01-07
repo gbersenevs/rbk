@@ -1,12 +1,26 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/container";
+import { useTheme } from "./theme-provider";
 
 export function Footer() {
   const { company, footer } = siteConfig;
   const currentYear = new Date().getFullYear();
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const logoSrc = mounted && theme === "dark" 
+    ? "/brand/rbk-logo-dark.svg" 
+    : "/brand/rbk-logo-light.svg";
 
   return (
     <footer className="bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 transition-colors">
@@ -17,7 +31,7 @@ export function Footer() {
             <div className="md:col-span-2">
               <Link href="/" className="inline-block mb-4 notranslate">
                 <Image 
-                  src="/brand/rbk-logo.svg" 
+                  src={logoSrc}
                   alt="RBK"
                   width={100}
                   height={38}

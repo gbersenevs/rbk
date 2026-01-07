@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-primary-950/20 dark:to-mint-900/10">
+      <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-primary-950/30">
         <Container>
           <div className="max-w-3xl">
             {/* Gradient accent line */}
@@ -27,7 +27,7 @@ export default function HomePage() {
               {home.hero.description}
             </p>
             
-            <Button href={home.hero.cta.href} size="lg">
+            <Button href={home.hero.cta.href} size="lg" variant="secondary">
               {home.hero.cta.label}
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
@@ -36,7 +36,7 @@ export default function HomePage() {
       </section>
 
       {/* Approach Section */}
-      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-3xl">
             <h2 className="mb-6">{home.approach.title}</h2>
@@ -51,7 +51,7 @@ export default function HomePage() {
       </section>
 
       {/* Three Principles Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
+      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950">
         <Container>
           <h2 className="mb-12">{home.principles.title}</h2>
           
@@ -82,7 +82,7 @@ export default function HomePage() {
       </section>
 
       {/* What We Do / Don't Do Section */}
-      <section className="py-16 md:py-24 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+      <section className="py-16 md:py-24 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* What We Do */}
@@ -121,7 +121,7 @@ export default function HomePage() {
       </section>
 
       {/* Ideal Client Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
+      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:to-neutral-900">
         <Container>
           <div className="max-w-2xl">
             <h2 className="mb-4">{home.idealClient.title}</h2>
@@ -139,18 +139,17 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary-700 via-primary-800 to-primary-900 dark:from-primary-900 dark:via-primary-950 dark:to-neutral-950">
+      <section className="py-16 md:py-24 bg-neutral-100 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/20 dark:to-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="text-white mb-4">{home.cta.title}</h2>
-            <p className="text-primary-200 mb-8">
+            <h2 className="mb-4">{home.cta.title}</h2>
+            <p className="text-neutral-600 dark:text-neutral-400 mb-8">
               {home.cta.description}
             </p>
             <Button 
               href={home.cta.buttonHref}
-              variant="outline"
+              variant="secondary"
               size="lg"
-              className="bg-white text-primary-900 border-white hover:bg-primary-50"
             >
               {home.cta.buttonLabel}
               <ArrowRight className="w-4 h-4 ml-2" />

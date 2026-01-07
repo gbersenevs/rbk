@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
@@ -8,11 +8,23 @@ import { siteConfig } from "@/lib/site-config";
 import { Container } from "./container";
 import { GoogleTranslate } from "./google-translate";
 import { ThemeToggle } from "./theme-toggle";
+import { useTheme } from "./theme-provider";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
 
   const { navigation, company } = siteConfig;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Determine which logo to show
+  const logoSrc = mounted && theme === "dark" 
+    ? "/brand/rbk-logo-dark.svg" 
+    : "/brand/rbk-logo-light.svg";
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800 transition-colors">
@@ -21,7 +33,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="notranslate flex items-center" aria-label={`${company.name} Home`}>
             <Image 
-              src="/brand/rbk-logo.svg" 
+              src={logoSrc}
               alt="RBK"
               width={80}
               height={30}
@@ -54,7 +66,7 @@ export function Header() {
             {/* CTA Button - Desktop */}
             <Link
               href="/contact"
-              className="hidden md:inline-flex bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-800 transition-colors"
+              className="hidden md:inline-flex bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 px-4 py-2 rounded-lg text-sm font-medium hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
             >
               Contact
             </Link>
@@ -92,7 +104,7 @@ export function Header() {
             <div className="mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
               <Link
                 href="/contact"
-                className="block w-full bg-primary text-white text-center px-4 py-2.5 rounded-lg font-medium hover:bg-primary-800 transition-colors"
+                className="block w-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-center px-4 py-2.5 rounded-lg font-medium hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact

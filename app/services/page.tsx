@@ -19,7 +19,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-primary-950/20 dark:to-mint-900/10">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-primary-950/30">
         <Container>
           <div className="max-w-3xl">
             <div className="accent-line mb-8" />
@@ -30,7 +30,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Intro */}
-      <section className="py-16 md:py-20 bg-white dark:bg-neutral-950">
+      <section className="py-16 md:py-20 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:to-neutral-900">
         <Container>
           <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl leading-relaxed">
             {services.intro}
@@ -39,7 +39,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Three Phases */}
-      <section className="py-16 md:py-24 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+      <section className="py-16 md:py-24 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="space-y-20">
             {services.phases.map((phase, index) => (
@@ -61,7 +61,7 @@ export default function ServicesPage() {
                     </p>
                     
                     {/* Outcome */}
-                    <div className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-5">
+                    <div className="bg-white dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded-lg p-5">
                       <p className="text-sm font-medium text-neutral-900 dark:text-white mb-1">Outcome</p>
                       <p className="text-sm text-neutral-600 dark:text-neutral-400">{phase.outcome}</p>
                     </div>
@@ -92,7 +92,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Technologies */}
-      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
+      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950">
         <Container>
           <div className="max-w-3xl mb-12">
             <h2 className="mb-4">{services.technologies.title}</h2>
@@ -115,18 +115,17 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary-700 via-primary-800 to-primary-900 dark:from-primary-900 dark:via-primary-950 dark:to-neutral-950">
+      <section className="py-16 md:py-24 bg-neutral-100 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/20 dark:to-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="text-white mb-4">Ready to review your operations?</h2>
-            <p className="text-primary-200 mb-8">
+            <h2 className="mb-4">Ready to review your operations?</h2>
+            <p className="text-neutral-600 dark:text-neutral-400 mb-8">
               Start with a conversation. We will discuss where your business is today and how we might help.
             </p>
             <Button 
               href="/contact"
-              variant="outline"
+              variant="secondary"
               size="lg"
-              className="bg-white text-primary-900 border-white hover:bg-primary-50"
             >
               Get in touch
               <ArrowRight className="w-4 h-4 ml-2" />
