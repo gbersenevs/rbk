@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,21 +7,17 @@
 @import './google-translate-styles.css';
 
 :root {
-  /* FDA SERVICE Brand Colors - Light turquoise primary, darker turquoise accent */
-  --color-primary: #26D6BB;
-  --color-primary-50: #E6FBF7;
-  --color-primary-100: #C6F4EC;
-  --color-primary-200: #9EEEE0;
-  --color-primary-600: #1EB19C;
-  --color-primary-700: #178C7D;
-  --color-secondary: #00C9A7;
-  --color-tertiary: #F1F5F9;
-  --color-surface: #F8FAFC;
+  /* RBK Brand Colors - Calm neutral with dark purple accents */
+  --color-primary: #6D28D9;
+  --color-primary-600: #7C3AED;
+  --color-primary-700: #6D28D9;
+  --color-primary-800: #5B21B6;
+  --color-surface: #FAFAFA;
   --color-background: #FFFFFF;
-  --color-text: #1E293B;
-  --color-text-muted: #64748B;
-  --color-text-light: #94A3B8;
-  --color-border: #E2E8F0;
+  --color-text: #171717;
+  --color-text-secondary: #525252;
+  --color-text-muted: #737373;
+  --color-border: #E5E5E5;
 }
 
 @layer base {
@@ -34,16 +30,17 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
   
+  /* Strong typographic hierarchy */
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold text-text tracking-tight;
   }
   
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl leading-tight font-bold;
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
   }
   
   h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
+    @apply text-2xl md:text-3xl leading-tight;
   }
   
   h3 {
@@ -55,14 +52,14 @@
   }
   
   p {
-    @apply text-text-muted leading-relaxed;
+    @apply text-text-secondary leading-relaxed;
   }
   
   a {
     @apply transition-colors duration-200;
   }
   
-  /* Focus states for accessibility */
+  /* Focus states */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
@@ -74,7 +71,7 @@
 
 @layer components {
   .prose {
-    @apply text-text-muted leading-relaxed;
+    @apply text-text-secondary leading-relaxed;
   }
   
   .prose p {
@@ -86,40 +83,47 @@
   }
   
   .prose li {
-    @apply text-text-muted;
+    @apply text-text-secondary;
   }
 
-  /* Card hover effect - subtle */
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-soft hover:-translate-y-1;
+  /* Calm card style */
+  .card {
+    @apply bg-white border border-border rounded-lg p-6 transition-shadow duration-200;
   }
 
-  /* Gradient text - light to dark turquoise */
-  .text-gradient {
-    @apply bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent;
+  .card:hover {
+    @apply shadow-card;
   }
 
-  /* Clean button styles with light turquoise primary */
+  /* Simple button styles */
   .btn-primary {
     @apply bg-primary text-white px-6 py-3 rounded-lg font-medium 
-           hover:bg-primary-600 transition-all duration-200 
-           shadow-sm hover:shadow-md;
+           hover:bg-primary-800 transition-colors duration-200;
   }
 
   .btn-secondary {
     @apply bg-white text-text border border-border px-6 py-3 rounded-lg font-medium 
-           hover:bg-surface hover:border-primary/30 transition-all duration-200;
+           hover:bg-surface hover:border-neutral-300 transition-colors duration-200;
+  }
+
+  /* Purple accent line */
+  .accent-line {
+    @apply w-12 h-1 bg-primary rounded-full;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t border-border;
   }
 }
 
 @layer utilities {
-  /* Smooth shadow for cards - grey based */
   .shadow-soft {
-    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
   }
 
-  /* Subtle text shadow */
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
   }
 }

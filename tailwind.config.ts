@@ -9,35 +9,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // FDA SERVICE Brand Colors - Light turquoise primary, darker turquoise accent
+        // RBK Brand Colors - Calm, neutral with dark purple accents
         primary: {
-          DEFAULT: "#26D6BB", // Light turquoise (PRIMARY)
-          50: "#E6FBF7",
-          100: "#C6F4EC",
-          200: "#9EEEE0",
-          300: "#76E8D4",
-          400: "#4EDEC8",
-          500: "#26D6BB", // Main light turquoise
-          600: "#1EB19C",
-          700: "#178C7D",
-          800: "#0F675E",
-          900: "#08423F",
+          DEFAULT: "#6D28D9", // Dark purple (Violet 700)
+          50: "#F5F3FF",
+          100: "#EDE9FE",
+          200: "#DDD6FE",
+          300: "#C4B5FD",
+          400: "#A78BFA",
+          500: "#8B5CF6",
+          600: "#7C3AED",
+          700: "#6D28D9",
+          800: "#5B21B6",
+          900: "#4C1D95",
+          950: "#2E1065",
         },
-        secondary: "#00C9A7", // Darker turquoise (ACCENT)
-        tertiary: "#F1F5F9", // Light grey for backgrounds
-        surface: "#F8FAFC", // Very light grey
+        // Neutral grays for calm aesthetic
+        neutral: {
+          50: "#FAFAFA",
+          100: "#F5F5F5",
+          200: "#E5E5E5",
+          300: "#D4D4D4",
+          400: "#A3A3A3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+          950: "#0A0A0A",
+        },
+        // Semantic colors
+        surface: "#FAFAFA",
         background: "#FFFFFF",
         text: {
-          DEFAULT: "#1E293B", // Dark slate for main text
-          muted: "#64748B", // Medium grey for secondary text
-          light: "#94A3B8", // Light grey
+          DEFAULT: "#171717", // Near black for strong readability
+          secondary: "#525252", // Medium gray for body text
+          muted: "#737373", // Lighter for subtle text
+          light: "#A3A3A3",
         },
-        border: "#E2E8F0", // Light grey border
-        accent: {
-          turquoise: "#00C9A7", // Darker turquoise accent
-          light: "#26D6BB", // Light turquoise
-          pale: "#E6FBF7",
-        },
+        border: "#E5E5E5",
       },
       fontFamily: {
         sans: [
@@ -47,19 +57,32 @@ const config: Config = {
           "BlinkMacSystemFont",
           "Segoe UI",
           "Roboto",
-          "Helvetica Neue",
-          "Arial",
           "sans-serif",
+        ],
+        mono: [
+          "JetBrains Mono",
+          "Fira Code",
+          "Monaco",
+          "Consolas",
+          "monospace",
         ],
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-pattern': 'linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%)',
-        'section-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+        'gradient-subtle': 'linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)',
       },
       boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
+        'soft': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03)',
+        'elevated': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.03)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
     },
   },

@@ -1,54 +1,46 @@
 /**
- * FDA SERVICE, SIA - Site Configuration
+ * RBK - Site Configuration
  * 
- * This file contains all company information, content, and copy.
- * Edit this file to update website content without touching components.
+ * Brand: Review. Build. Keep control.
+ * A business-first automation and systems consultancy.
  */
 
 export const siteConfig = {
   // Company Information
   company: {
-    name: "FDA SERVICE",
-    legalName: 'SIA "FDA SERVICE"',
-    registrationNumber: "41503074036",
-    vatNumber: "LV41503074036",
-    sepaIdentifier: "LV82ZZZ41503074036",
+    name: "RBK",
+    legalName: 'SIA "RBK Realty"',
+    registrationNumber: "40103633804",
+    vatNumber: "LV40103633804",
+    registrationDate: "06.02.2013",
+    vatRegistrationDate: "11.03.2013",
     address: {
-      street: "18. novembra iela 97A–20",
-      city: "Daugavpils",
-      postalCode: "LV-5404",
+      street: "Hāpsalas iela 15 – 6/7",
+      city: "Rīga",
+      postalCode: "LV-1005",
       country: "Latvia",
-      region: "Latgale",
-      full: "18. novembra iela 97A–20, Daugavpils, LV-5404, Latvia",
+      full: "Hāpsalas iela 15 – 6/7, Rīga, LV-1005, Latvia",
     },
-    phone: "", // No phone number
-    email: "info@fda.lv",
-    positioning: "Professional building cleaning services in Latgale region",
-    establishedYear: 2015,
-    establishedDate: "9 December 2015",
-    trustLine: "10+ years of professional cleaning experience",
-    shareCapital: "€3,000",
-    
-    // Business details
-    naceCode: "81.21",
-    naceDescription: "General cleaning of buildings",
-    workingHours: "Monday - Friday: 8:00 - 18:00",
-    industriesServed: [
-      "Commercial buildings",
-      "Residential buildings",
-      "Office spaces",
-      "Institutional facilities",
-      "Retail premises",
-    ],
-    serviceAreas: ["Daugavpils", "Latgale region", "Latvia"],
+    phone: "",
+    email: "hello@rbk.lv",
+    positioning: "Business-first automation and systems consultancy",
+    establishedYear: 2013,
+    establishedDate: "6 February 2013",
+  },
+
+  // Brand
+  brand: {
+    corePrinciple: "Review. Build. Keep control.",
+    tagline: "Business-first automation and systems consultancy",
+    shortSummary: "RBK helps businesses review their operations, build practical automation, and keep control over their systems.",
   },
 
   // SEO Defaults
   seo: {
-    siteName: "FDA SERVICE",
-    defaultTitle: "FDA SERVICE - Professional Building Cleaning in Daugavpils",
+    siteName: "RBK",
+    defaultTitle: "RBK - Review. Build. Keep control.",
     defaultDescription:
-      "Professional building cleaning services in Daugavpils and Latgale region. Daily cleaning, general cleaning, and facility maintenance since 2015.",
+      "RBK helps small and service-based businesses understand how their operations work, build reliable internal systems, and keep long-term control over processes, data, and decisions.",
     locale: "en_LV",
     type: "website",
   },
@@ -57,17 +49,9 @@ export const siteConfig = {
   navigation: {
     main: [
       { label: "Home", href: "/" },
-      { label: "About us", href: "/about" },
-      {
-        label: "Services",
-        href: "/services",
-        children: [
-          { label: "Daily cleaning", href: "/services/daily-cleaning" },
-          { label: "General cleaning", href: "/services/general-cleaning" },
-          { label: "Facility support", href: "/services/facility-support" },
-        ],
-      },
-      { label: "Contacts", href: "/contact" },
+      { label: "About", href: "/about" },
+      { label: "Services", href: "/services" },
+      { label: "Contact", href: "/contact" },
     ],
     languages: [
       { code: "en", label: "EN" },
@@ -79,137 +63,82 @@ export const siteConfig = {
   // Home Page Content
   home: {
     hero: {
-      headline: "Your partner for all things cleaning",
-      subheadline:
-        "We assist businesses and buildings in Daugavpils and the Latgale region with professional cleaning services. Leave the cleaning to us.",
-      primaryCta: { label: "Get a free quote", href: "/contact" },
-      secondaryCta: { label: "Our services", href: "/services" },
-      stats: [
-        { value: "10+", label: "Years experience" },
-        { value: "100%", label: "Latvian company" },
-        { value: "24/7", label: "Available support" },
+      headline: "Review how your business works.",
+      sublines: [
+        "Build systems that support it.",
+        "Keep control as you grow.",
       ],
+      description: "RBK helps small and service-based businesses understand how their operations actually work, build reliable internal systems, and keep long-term control over processes, data, and decisions.",
+      cta: { label: "Start a conversation", href: "/contact" },
     },
-    mission: {
-      title: "Our Mission",
-      content:
-        "To provide reliable, high-quality building cleaning services that create healthier, more productive environments for businesses and residents throughout the Latgale region.",
+    
+    approach: {
+      title: "How we work",
+      intro: "RBK does not start with tools. RBK starts with a review of the business as it exists today. Automation and AI are applied only after workflows, responsibilities, and information flows are clearly understood.",
+      goal: "The goal is not speed or novelty, but operational clarity and owner control.",
     },
-    vision: {
-      title: "Our Vision",
-      bullets: [
-        "To be the most trusted cleaning service provider in Latgale",
-        "To set the standard for professional cleaning in our region",
-      ],
-      expandedContent:
-        "We envision a future where every building in Daugavpils and the surrounding region benefits from professional cleaning standards. Our commitment to quality, reliability, and local expertise positions us as the partner of choice for businesses and property managers who value clean, healthy environments.",
-    },
-    values: {
-      title: "Our Values",
+
+    principles: {
+      title: "Our approach",
       items: [
         {
-          title: "Reliability",
-          description:
-            "We show up on time, every time. Our clients trust us to deliver consistent results without fail.",
+          title: "Review",
+          description: "We begin by reviewing how your business operates in reality — not how it is described on paper. This includes how work moves through the business, where manual effort is repeated, where information is lost, and where systems depend on individuals instead of structure.",
+          detail: "The review phase is diagnostic, not disruptive. It creates a shared understanding before any solution is proposed.",
         },
         {
-          title: "Quality",
-          description:
-            "We take pride in our work. Every surface cleaned meets our high standards of excellence.",
+          title: "Build",
+          description: "We build systems that support the reviewed processes. This includes clear workflows, practical automation, structured data flows, and AI-supported decision tools where they add measurable value.",
+          detail: "Every system is built to match how your business works, not how software expects it to work. Solutions are intentionally simple, documented, and maintainable.",
         },
         {
-          title: "Integrity",
-          description:
-            "Transparent pricing, honest communication, and ethical business practices define how we operate.",
-        },
-        {
-          title: "Local Focus",
-          description:
-            "As a Latgale-based company, we understand our community and are committed to its success.",
+          title: "Keep control",
+          description: "We ensure that control remains with your business. No black-box systems. No unnecessary vendor lock-in. Clear ownership of data and logic. Transparency in how systems function.",
+          detail: "The objective is independence, not dependency. You should be able to operate without constant external support.",
         },
       ],
     },
-    services: {
-      title: "Our Services",
+
+    whatWeDo: {
+      title: "What we do",
       items: [
-        {
-          title: "Daily Cleaning",
-          description:
-            "Regular maintenance cleaning to keep your premises spotless and welcoming every single day.",
-          href: "/services/daily-cleaning",
-        },
-        {
-          title: "General Cleaning",
-          description:
-            "Deep cleaning services for thorough maintenance and restoration of your facilities.",
-          href: "/services/general-cleaning",
-        },
-        {
-          title: "Facility Support",
-          description:
-            "Comprehensive facility maintenance and support services for complete building care.",
-          href: "/services/facility-support",
-        },
+        "Review operational workflows and dependencies",
+        "Identify bottlenecks and owner-dependency risks",
+        "Design automation aligned with real business processes",
+        "Implement AI where it improves decision quality or efficiency",
+        "Document systems so they remain understandable over time",
       ],
+      closing: "RBK works as a partner, not a replacement.",
     },
-    objects: {
-      title: "Buildings We Clean",
-      categories: [
-        {
-          title: "Commercial & Office Buildings",
-          items: [
-            "Corporate offices",
-            "Business centers",
-            "Co-working spaces",
-            "Banks and financial offices",
-            "IT and tech companies",
-          ],
-        },
-        {
-          title: "Residential Buildings",
-          items: [
-            "Apartment building common areas",
-            "Stairwells and corridors",
-            "Entrances and lobbies",
-            "Parking facilities",
-            "Outdoor common areas",
-          ],
-        },
-        {
-          title: "Public & Commercial Spaces",
-          items: [
-            "Retail stores and shops",
-            "Shopping centers",
-            "Medical facilities",
-            "Educational institutions",
-            "Warehouses and industrial spaces",
-          ],
-        },
-      ],
-    },
-    whyChoose: {
-      title: "Why Choose FDA SERVICE",
+
+    whatWeDoNot: {
+      title: "What we do not do",
       items: [
-        "Local expertise – we know Daugavpils and Latgale",
-        "10+ years of proven experience in building cleaning",
-        "Fully compliant with Latvian regulations",
-        "Flexible scheduling to fit your needs",
-        "Dedicated account managers for direct communication",
-        "Competitive pricing with transparent quotes",
+        "Sell tools without context",
+        "Push automation where structure is missing",
+        "Optimize metrics that do not matter to owners",
+        "Build systems that only technicians understand",
+        "Chase trends or buzzwords",
+      ],
+      closing: "Technology serves the business, not the other way around.",
+    },
+
+    idealClient: {
+      title: "Who we work with",
+      intro: "RBK works best with businesses that:",
+      items: [
+        "Are operationally active but structurally stretched",
+        "Rely heavily on the owner for daily decisions",
+        "Want fewer manual processes, not more software",
+        "Value understanding and control over rapid scaling",
+        "Prefer long-term clarity to short-term hacks",
       ],
     },
-    compliance: {
-      title: "Trusted & Compliant",
-      content:
-        "FDA SERVICE, SIA is a registered Latvian company operating in full compliance with Commercial Law and tax regulations. We maintain transparent business practices, submit regular financial reports, and have no registered tax debts or legal proceedings. Our commitment to compliance ensures peace of mind for all our clients.",
-      certifications: [],
-      insurance: null,
-    },
+
     cta: {
-      title: "Ready for a cleaner space?",
-      content:
-        "Contact us today for a free, no-obligation quote. We'll assess your needs and provide a customized cleaning solution.",
-      buttonLabel: "Get your free quote",
+      title: "Ready to review how your business works?",
+      description: "Let's start with a conversation about where you are today and where you want to be.",
+      buttonLabel: "Get in touch",
       buttonHref: "/contact",
     },
   },
@@ -218,248 +147,179 @@ export const siteConfig = {
   about: {
     hero: {
       title: "About ",
-      subtitle: "Professional building cleaning services since 2015",
+      subtitle: "Business-first automation and systems consultancy",
     },
-    highlights: [
-      "Registered Latvian company with 10+ years of operation",
-      "Based in Daugavpils, serving the Latgale region",
-      "Full compliance with all regulatory requirements",
-      "Experienced team dedicated to quality cleaning",
-    ],
     overview: {
-      title: "Who We Are",
+      title: "Who we are",
       paragraphs: [
-        "FDA SERVICE, SIA is a Latvian building cleaning company established in December 2015. Based in Daugavpils, we specialize in providing professional cleaning services for commercial, residential, and institutional buildings throughout the Latgale region.",
-        "Over the past 10+ years, we have built a reputation for reliability, quality, and professional service delivery. Our team understands the unique needs of our local community and is committed to maintaining the highest standards of cleanliness in every building we serve.",
+        "RBK is a business-first automation and systems consultancy based in Riga, Latvia. We help small and service-based businesses understand how their operations actually work, build reliable internal systems, and keep long-term control over processes, data, and decisions.",
+        "We do not start with tools. We start with a review of the business as it exists today. Automation and AI are applied only after workflows, responsibilities, and information flows are clearly understood.",
       ],
     },
-    howWeWork: {
-      title: "How We Work",
-      steps: [
+    brandRule: {
+      title: "Our internal rule",
+      intro: "RBK always answers these questions before proposing a solution:",
+      questions: [
+        "What problem is being reviewed?",
+        "What is being built, and why?",
+        "How does the business keep control afterward?",
+      ],
+      closing: "If any of these are unclear, the solution is not ready.",
+    },
+    values: {
+      title: "How we think",
+      items: [
         {
-          number: 1,
-          title: "Initial Consultation",
-          description:
-            "We visit your premises to understand your specific cleaning requirements and challenges.",
+          title: "Clarity over complexity",
+          description: "We build systems that are understandable, not impressive. If you cannot explain how it works, it is not ready.",
         },
         {
-          number: 2,
-          title: "Custom Proposal",
-          description:
-            "We create a detailed cleaning plan and transparent pricing tailored to your needs.",
+          title: "Business first",
+          description: "Technology serves the business. We start with operations, not tools. Solutions must match how work actually happens.",
         },
         {
-          number: 3,
-          title: "Professional Execution",
-          description:
-            "Our trained team delivers consistent, high-quality cleaning according to the agreed schedule.",
+          title: "Owner control",
+          description: "The goal is independence, not dependency. You should understand and own your systems, not rent them.",
         },
         {
-          number: 4,
-          title: "Quality Assurance",
-          description:
-            "Regular inspections and feedback ensure our service meets your expectations.",
-        },
-        {
-          number: 5,
-          title: "Ongoing Partnership",
-          description:
-            "We continuously adapt our services to your evolving needs and maintain open communication.",
+          title: "Long-term thinking",
+          description: "Quick fixes create long-term problems. We build for sustainability, documentation, and maintainability.",
         },
       ],
-    },
-    experience: {
-      title: "Experience & Trust",
-      content:
-        "With 10+ years of annual financial reporting and consistent compliance with Latvian regulations, FDA SERVICE has demonstrated stability and professionalism in the cleaning services sector. Our partnership with BCS Latgale further strengthens our position as a reliable service provider in the region.",
-      clientLogosPlaceholder:
-        "Client references available upon request. We respect our clients' privacy and provide testimonials only with their explicit consent.",
     },
   },
 
   // Services Page Content
   services: {
     hero: {
-      title: "Our Services",
-      subtitle:
-        "Comprehensive building cleaning solutions for every need",
+      title: "Services",
+      subtitle: "Review. Build. Keep control.",
     },
-    intro:
-      "FDA SERVICE provides a full range of professional cleaning services designed to maintain clean, healthy, and welcoming environments. From daily maintenance to deep cleaning, we have the expertise and equipment to handle any building type.",
-    pricing: {
-      title: "Transparent Pricing",
-      content:
-        "We believe in honest, straightforward pricing. After an initial assessment of your premises, we provide a detailed quote with no hidden fees.",
-      factors: [
-        "Total area to be cleaned",
-        "Frequency of service (daily, weekly, monthly)",
-        "Type of building and surfaces",
-        "Special requirements or equipment needed",
-      ],
-    },
-  },
+    intro: "We help businesses understand how their operations work, build systems that support real workflows, and maintain control over their processes and data.",
+    
+    phases: [
+      {
+        title: "Review",
+        subtitle: "Understand how your business actually operates",
+        description: "We begin by reviewing how your business works in reality. This diagnostic phase creates shared understanding before any solution is proposed.",
+        includes: [
+          "How work actually moves through the business",
+          "Where manual effort is repeated",
+          "Where information is lost or duplicated",
+          "Where owners are required unnecessarily",
+          "Where systems depend on individuals instead of structure",
+        ],
+        outcome: "A clear picture of your operations as they exist today, with identified opportunities for improvement.",
+      },
+      {
+        title: "Build",
+        subtitle: "Create systems that match how you work",
+        description: "We build systems that support your reviewed processes. Every solution is designed to match how your business actually works, not how software expects it to work.",
+        includes: [
+          "Clear workflows and process documentation",
+          "Practical automation for repetitive tasks",
+          "Structured data flows between systems",
+          "AI-supported decision tools where they add value",
+          "Integration with existing tools and processes",
+        ],
+        outcome: "Intentionally simple, documented, and maintainable systems that support your operations.",
+      },
+      {
+        title: "Keep control",
+        subtitle: "Maintain independence over your systems",
+        description: "We ensure that control remains with your business. The objective is independence, not dependency on external support.",
+        includes: [
+          "No black-box systems — everything is transparent",
+          "No unnecessary vendor lock-in",
+          "Clear ownership of data and logic",
+          "Documentation for ongoing maintenance",
+          "Training for your team where needed",
+        ],
+        outcome: "The ability to understand, maintain, and evolve your systems without constant external help.",
+      },
+    ],
 
-  // Service Detail Pages
-  serviceDetails: {
-    "daily-cleaning": {
-      title: "Daily Cleaning",
-      subtitle: "Keep your space spotless every day",
-      description:
-        "Our daily cleaning services ensure your premises remain clean, hygienic, and professional at all times. We work according to your schedule to minimize disruption while maintaining consistent cleanliness standards.",
-      included: [
-        "Floor sweeping, mopping, and maintenance",
-        "Surface dusting and sanitization",
-        "Trash collection and bin management",
-        "Restroom cleaning and restocking",
-        "Kitchen and break room cleaning",
-        "Window sill and ledge cleaning",
-        "Door handle and touch point disinfection",
-        "Elevator and common area maintenance",
+    technologies: {
+      title: "Tools we use",
+      intro: "We work with established, practical tools. The choice of technology follows from business requirements, not the other way around.",
+      categories: [
+        {
+          title: "Automation",
+          items: ["N8N", "Make.com", "Zapier", "Custom scripts"],
+        },
+        {
+          title: "Data & Integration",
+          items: ["APIs", "Databases", "Spreadsheets", "CRM systems"],
+        },
+        {
+          title: "AI & Analysis",
+          items: ["LLM integration", "Data analysis", "Decision support tools"],
+        },
+        {
+          title: "Documentation",
+          items: ["Process mapping", "System documentation", "Training materials"],
+        },
       ],
-      whoFor: [
-        "Office buildings with daily operations",
-        "Retail stores and commercial spaces",
-        "Medical and healthcare facilities",
-        "Educational institutions",
-        "Residential building common areas",
-      ],
-      frequency: {
-        title: "Flexible Scheduling",
-        content:
-          "Daily cleaning can be scheduled before business hours, during quiet periods, or after closing. We adapt to your operational needs to ensure minimal disruption.",
-      },
-      qualityControl: {
-        title: "Quality Assurance",
-        content:
-          "Our supervisors conduct regular inspections and maintain direct communication with clients. Any concerns are addressed immediately to ensure consistent satisfaction.",
-      },
-    },
-    "general-cleaning": {
-      title: "General Cleaning",
-      subtitle: "Deep cleaning for thorough results",
-      description:
-        "General cleaning provides comprehensive deep cleaning of your entire premises. This service addresses areas not covered by daily maintenance, ensuring complete cleanliness from floor to ceiling.",
-      included: [
-        "Deep floor cleaning, scrubbing, and polishing",
-        "Complete window cleaning (interior and frames)",
-        "Detailed furniture and fixture cleaning",
-        "Light fixture and vent cleaning",
-        "Carpet shampooing and upholstery cleaning",
-        "Wall washing and ceiling dusting",
-        "Behind and under furniture cleaning",
-        "Kitchen equipment and appliance cleaning",
-      ],
-      whoFor: [
-        "Buildings requiring periodic deep maintenance",
-        "Properties preparing for inspections or events",
-        "Post-renovation or construction cleanup",
-        "Seasonal deep cleaning needs",
-        "Move-in/move-out cleaning",
-      ],
-      frequency: {
-        title: "Scheduled as Needed",
-        content:
-          "General cleaning is typically scheduled monthly, quarterly, or seasonally depending on your requirements. Many clients combine daily cleaning with periodic general cleaning for optimal results.",
-      },
-      qualityControl: {
-        title: "Thorough Documentation",
-        content:
-          "Each general cleaning project includes a detailed checklist, before/after assessment, and completion sign-off. We ensure every aspect of the work meets our quality standards.",
-      },
-    },
-    "facility-support": {
-      title: "Facility Support",
-      subtitle: "Complete building maintenance support",
-      description:
-        "Our facility support services extend beyond cleaning to provide comprehensive building maintenance assistance. We help property managers and building owners maintain their facilities in optimal condition.",
-      included: [
-        "Supply management and restocking",
-        "Waste management coordination",
-        "Minor maintenance task coordination",
-        "Seasonal services (snow removal coordination, etc.)",
-        "Plant and greenery maintenance",
-        "Event setup and cleanup support",
-        "Emergency cleaning response",
-        "Periodic facility inspections",
-      ],
-      whoFor: [
-        "Property management companies",
-        "Building administrators without dedicated staff",
-        "Multi-tenant residential buildings",
-        "Commercial property owners",
-        "Organizations needing flexible support",
-      ],
-      frequency: {
-        title: "On-Demand & Scheduled",
-        content:
-          "Facility support services are provided on an as-needed basis or according to scheduled maintenance plans. We create customized support packages based on your specific requirements.",
-      },
-      qualityControl: {
-        title: "Comprehensive Reporting",
-        content:
-          "We maintain detailed logs of all facility support activities, provide regular status reports, and coordinate with contractors and vendors as needed.",
-      },
     },
   },
 
   // Contact Page Content
   contact: {
     hero: {
-      title: "Contact Us",
-      subtitle:
-        "Get in touch for a free quote or to discuss your cleaning needs",
+      title: "Let's talk",
+      subtitle: "Start with a conversation about where you are today",
     },
+    intro: "We begin every engagement with a conversation. Tell us about your business and what you are trying to solve. There is no commitment — just an honest discussion about whether we can help.",
     form: {
-      title: "Send us a message",
+      title: "Send a message",
       fields: {
-        name: { label: "Full name", placeholder: "Your full name" },
-        company: { label: "Company name (optional)", placeholder: "Your company" },
+        name: { label: "Name", placeholder: "Your name" },
+        company: { label: "Company (optional)", placeholder: "Your company" },
         email: { label: "Email", placeholder: "your@email.com" },
         serviceType: {
-          label: "Service type",
-          placeholder: "Select a service",
+          label: "What are you looking for?",
+          placeholder: "Select an option",
           options: [
-            { value: "daily-cleaning", label: "Daily cleaning" },
-            { value: "general-cleaning", label: "General cleaning" },
-            { value: "facility-support", label: "Facility support" },
-            { value: "other", label: "Other / Not sure" },
+            { value: "review", label: "Operations review" },
+            { value: "automation", label: "Automation project" },
+            { value: "systems", label: "Systems design" },
+            { value: "consultation", label: "General consultation" },
+            { value: "other", label: "Something else" },
           ],
         },
         message: {
-          label: "Message",
-          placeholder: "Tell us about your building and cleaning needs...",
+          label: "Tell us about your situation",
+          placeholder: "Describe your business, current challenges, and what you are hoping to achieve...",
         },
       },
       submitLabel: "Send message",
-      successMessage:
-        "Thank you for your message! We will contact you within 1-2 business days with a response.",
+      successMessage: "Thank you. We will review your message and respond within 1-2 business days.",
     },
-    // Google Maps embed for Daugavpils
-    mapEmbedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2239.9876543210123!2d26.5123456!3d55.8765432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c29c8c8c8c8c8c%3A0x1234567890abcdef!2s18.%20novembra%20iela%2097A%2C%20Daugavpils%2C%20LV-5404!5e0!3m2!1sen!2slv!4v1234567890",
+    info: {
+      email: {
+        label: "Email",
+        value: "hello@rbk.lv",
+      },
+      response: {
+        label: "Response time",
+        value: "Within 1-2 business days",
+      },
+    },
   },
 
   // Footer Content
   footer: {
+    tagline: "Review. Build. Keep control.",
     quickLinks: {
-      title: "Quick links",
+      title: "Navigation",
       links: [
         { label: "Home", href: "/" },
-        { label: "About us", href: "/about" },
+        { label: "About", href: "/about" },
         { label: "Services", href: "/services" },
-        { label: "Contacts", href: "/contact" },
+        { label: "Contact", href: "/contact" },
       ],
     },
-    servicesLinks: {
-      title: "Services",
-      links: [
-        { label: "Daily cleaning", href: "/services/daily-cleaning" },
-        { label: "General cleaning", href: "/services/general-cleaning" },
-        { label: "Facility support", href: "/services/facility-support" },
-      ],
-    },
-    cookieNotice:
-      "This website uses essential cookies for basic functionality. By continuing to use this site, you accept our use of cookies.",
+    cookieNotice: "This website uses essential cookies only.",
   },
 };
 

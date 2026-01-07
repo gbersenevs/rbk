@@ -8,6 +8,3 @@ export { Footer } from "./footer";
 export { GoogleTranslate } from "./google-translate";
 export { Header } from "./header";
 export { Section, SectionHeader } from "./section";
-export { ServiceCard } from "./service-card";
-export { ServicePageTemplate } from "./service-page-template";
-
