@@ -18,8 +18,8 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-primary-950/30">
+      {/* Hero Section - with gradient */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/30">
         <Container>
           <div className="max-w-3xl">
             <div className="accent-line mb-8" />
@@ -29,8 +29,8 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* Form Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950">
+      {/* Form Section - plain dark */}
+      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Form */}
@@ -39,7 +39,7 @@ export default function ContactPage() {
                 {contact.intro}
               </p>
               
-              <div className="bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-lg p-6 md:p-8">
+              <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-6 md:p-8">
                 <h2 className="text-xl font-semibold mb-6">{contact.form.title}</h2>
                 <ContactForm />
               </div>
@@ -48,7 +48,7 @@ export default function ContactPage() {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Email */}
-              <div className="bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5">
+              <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5">
                 <div className="flex items-center gap-3 mb-2">
                   <Mail className="w-4 h-4 text-primary" />
                   <h3 className="font-medium text-sm">{contact.info.email.label}</h3>
@@ -62,7 +62,7 @@ export default function ContactPage() {
               </div>
 
               {/* Response Time */}
-              <div className="bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5">
+              <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5">
                 <div className="flex items-center gap-3 mb-2">
                   <Clock className="w-4 h-4 text-mint-500" />
                   <h3 className="font-medium text-sm">{contact.info.response.label}</h3>
@@ -71,7 +71,7 @@ export default function ContactPage() {
               </div>
 
               {/* Location */}
-              <div className="bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5">
+              <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5">
                 <h3 className="font-medium text-sm mb-2">Location</h3>
                 <p className="text-neutral-600 dark:text-neutral-400 text-sm notranslate">
                   {company.address.city}, {company.address.country}

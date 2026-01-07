@@ -8,8 +8,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-primary-950/30">
+      {/* Hero Section - with gradient */}
+      <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/30">
         <Container>
           <div className="max-w-3xl">
             {/* Gradient accent line */}
@@ -35,8 +35,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Approach Section */}
-      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/20 border-y border-neutral-200 dark:border-neutral-800">
+      {/* Approach Section - plain dark */}
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-3xl">
             <h2 className="mb-6">{home.approach.title}</h2>
@@ -50,8 +50,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Three Principles Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950">
+      {/* Three Principles Section - plain dark */}
+      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
         <Container>
           <h2 className="mb-12">{home.principles.title}</h2>
           
@@ -81,8 +81,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* What We Do / Don't Do Section */}
-      <section className="py-16 md:py-24 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+      {/* What We Do / Don't Do Section - plain dark */}
+      <section className="py-16 md:py-24 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* What We Do */}
@@ -120,8 +120,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Ideal Client Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:to-neutral-900">
+      {/* Ideal Client Section - plain dark */}
+      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
         <Container>
           <div className="max-w-2xl">
             <h2 className="mb-4">{home.idealClient.title}</h2>
@@ -138,8 +138,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-neutral-100 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/20 dark:to-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
+      {/* CTA Section - plain dark */}
+      <section className="py-16 md:py-24 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-2xl">
             <h2 className="mb-4">{home.cta.title}</h2>

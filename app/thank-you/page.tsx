@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-primary-950/30">
+    <section className="py-20 md:py-32 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/30">
       <Container>
         <div className="max-w-xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-mint-100 dark:bg-mint-900/30 rounded-full mb-6">

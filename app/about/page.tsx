@@ -18,8 +18,8 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-primary-950/30">
+      {/* Hero Section - with gradient */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-primary-950/30">
         <Container>
           <div className="max-w-3xl">
             <div className="accent-line mb-8" />
@@ -32,8 +32,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Overview */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950">
+      {/* Overview - plain dark */}
+      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
         <Container>
           <div className="max-w-3xl">
             <h2 className="mb-6">{about.overview.title}</h2>
@@ -46,8 +46,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Brand Rule */}
-      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+      {/* Brand Rule - plain dark */}
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-3xl">
             <h2 className="mb-6">{about.brandRule.title}</h2>
@@ -71,8 +71,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Values */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:to-neutral-900">
+      {/* Values - plain dark */}
+      <section className="py-16 md:py-24 bg-white dark:bg-neutral-950">
         <Container>
           <h2 className="mb-12">{about.values.title}</h2>
           
@@ -88,8 +88,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Company Info */}
-      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+      {/* Company Info - plain dark */}
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -108,8 +108,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-neutral-100 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/20 dark:to-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
+      {/* CTA Section - plain dark */}
+      <section className="py-16 md:py-24 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <Container>
           <div className="max-w-2xl">
             <h2 className="mb-4">Let&apos;s talk</h2>

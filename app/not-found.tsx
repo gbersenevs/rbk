@@ -4,7 +4,7 @@ import { Container } from "@/components/container";
 
 export default function NotFoundPage() {
   return (
-    <section className="py-20 md:py-32 bg-white dark:bg-gradient-to-b dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950">
+    <section className="py-20 md:py-32 bg-white dark:bg-neutral-950">
       <Container>
         <div className="max-w-xl mx-auto text-center">
           <p className="text-6xl font-semibold text-gradient mb-4">404</p>
