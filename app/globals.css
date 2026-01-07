@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './google-translate-styles.css';
+
+:root {
+  /* FDA SERVICE Brand Colors - Light turquoise primary, darker turquoise accent */
+  --color-primary: #26D6BB;
+  --color-primary-50: #E6FBF7;
+  --color-primary-100: #C6F4EC;
+  --color-primary-200: #9EEEE0;
+  --color-primary-600: #1EB19C;
+  --color-primary-700: #178C7D;
+  --color-secondary: #00C9A7;
+  --color-tertiary: #F1F5F9;
+  --color-surface: #F8FAFC;
+  --color-background: #FFFFFF;
+  --color-text: #1E293B;
+  --color-text-muted: #64748B;
+  --color-text-light: #94A3B8;
+  --color-border: #E2E8F0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-text antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-text tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight font-bold;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  h4 {
+    @apply text-lg md:text-xl;
+  }
+  
+  p {
+    @apply text-text-muted leading-relaxed;
+  }
+  
+  a {
+    @apply transition-colors duration-200;
+  }
+  
+  /* Focus states for accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply text-text-muted leading-relaxed;
+  }
+  
+  .prose p {
+    @apply mb-4;
+  }
+  
+  .prose ul {
+    @apply list-disc pl-5 mb-4 space-y-2;
+  }
+  
+  .prose li {
+    @apply text-text-muted;
+  }
+
+  /* Card hover effect - subtle */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-soft hover:-translate-y-1;
+  }
+
+  /* Gradient text - light to dark turquoise */
+  .text-gradient {
+    @apply bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent;
+  }
+
+  /* Clean button styles with light turquoise primary */
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium 
+           hover:bg-primary-600 transition-all duration-200 
+           shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-text border border-border px-6 py-3 rounded-lg font-medium 
+           hover:bg-surface hover:border-primary/30 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  /* Smooth shadow for cards - grey based */
+  .shadow-soft {
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Subtle text shadow */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
