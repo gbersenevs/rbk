@@ -1,185 +1,108 @@
-/* Google Translate Widget Styling */
-/* Goal: Completely hide ALL Google UI while keeping translation working */
+/* Google Translate - Hide all default UI elements */
 
-/* CRITICAL: Hide the top banner frame - all variations */
-.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate,
-iframe.goog-te-banner-frame,
-body > .goog-te-banner-frame {
+/* Main widget container */
+.goog-te-gadget,
+.goog-te-gadget-simple,
+#google_translate_element {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  border: none !important;
   position: absolute !important;
   top: -9999px !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
 }
 
-/* Remove the body offset that Google Translate adds */
+/* Banner frames */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+iframe.skiptranslate,
+body > .skiptranslate,
+body > .skiptranslate iframe {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  position: absolute !important;
+}
+
+/* Menu elements */
+.goog-te-menu-frame,
+.goog-te-menu2,
+.goog-te-menu2-item,
+.goog-te-menu-value,
+.goog-te-gadget-icon {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Body adjustment prevention */
 body {
   top: 0 !important;
   position: static !important;
 }
 
-/* Hide any direct skiptranslate child of body (banner container) */
-body > .skiptranslate:not(.notranslate) {
+html.translated-ltr body,
+html.translated-rtl body {
+  top: 0 !important;
+}
+
+/* Font styles sometimes injected */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Remove Google tooltip */
+.goog-te-tooltip {
   display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  position: absolute !important;
-  top: -9999px !important;
-  z-index: -9999 !important;
 }
 
-/* Hide any iframe from Google at top of body */
-body > iframe.skiptranslate,
-body > .skiptranslate > iframe,
-iframe[id^="goog-"],
-iframe[src*="translate.google.com"] {
+/* Attribution link removal */
+.goog-logo-link,
+.goog-te-gadget span[style],
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
   display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  position: absolute !important;
-  top: -9999px !important;
 }
 
-/* Hide our custom widget container but keep it functional */
-.google-translate-widget,
-#google_translate_element {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-  width: 1px !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  clip: rect(0, 0, 0, 0) !important;
-}
-
-/* Hide the default Google Translate gadget */
-.goog-te-gadget,
-.goog-te-gadget-simple {
+/* Progress indicator */
+.goog-te-spinner-pos {
   display: none !important;
-  font-size: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
 }
 
-/* Keep the select functional but completely hidden */
+/* Container that wraps the select */
 .goog-te-combo {
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
-  opacity: 0 !important;
   visibility: hidden !important;
 }
 
-/* Hide ALL Google Translate UI elements */
-#goog-gt-tt,
-.goog-gt-tt,
-.goog-te-balloon-frame,
-.goog-te-balloon,
-div[id^=":"],
-div[id^="goog-gt-"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
-
-/* Hide the "Translate" tooltip box */
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
-}
-
-/* Ensure body positioning is not affected when translated */
+/* Fix any body margin/padding changes */
 body.translated-ltr,
 body.translated-rtl {
-  top: 0 !important;
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-/* Remove margin-top from html */
-html {
-  margin-top: 0 !important;
-}
-
-/* Hide the loading animation */
-.goog-te-spinner-pos,
-.goog-te-spinner-animation {
+/* Skip translate class elements */
+.skiptranslate {
   display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
 }
 
-/* Hide "Powered by Google" text */
-.goog-logo-link,
-.goog-te-gadget span,
-.goog-te-gadget a {
-  display: none !important;
-}
-
-/* Ensure notranslate elements stay in original language */
+/* Except our custom notranslate elements */
 .notranslate {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif !important;
-}
-
-/* Hide the dropdown menu frame */
-iframe.goog-te-menu-frame,
-.goog-te-menu-frame {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
-
-/* Hide the menu value */
-.goog-te-menu-value,
-.goog-te-menu2 {
-  display: none !important;
-}
-
-/* Hide any element with these specific IDs (Google uses) */
-#\:0\.targetLanguage,
-#\:1\.container,
-#\:1\.restore,
-#\:1\.close {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
-
-/* Hide any class starting with goog-te-banner */
-[class^="goog-te-banner"],
-[class*=" goog-te-banner"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  position: absolute !important;
-  top: -9999px !important;
-}
-
-/* Catch-all for fixed position Google elements at top */
-body > [style*="position: fixed"],
-body > [style*="position:fixed"] {
-  top: -9999px !important;
-}
-
-/* Additional catch-all rules */
-[id^="goog-gt-"]:not(.notranslate),
-[class^="goog-te-"]:not(.notranslate):not(.goog-te-combo) {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  max-height: 0 !important;
+  display: revert !important;
+  height: revert !important;
+  width: revert !important;
+  overflow: revert !important;
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import "./google-translate-styles.css";
 
@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.seo.siteName}`,
   },
   description: siteConfig.seo.defaultDescription,
+  icons: {
+    icon: "/brand/rbk-fav.png",
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.seo.locale,
@@ -29,14 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Prevent flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('rbk-theme');
-                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  var theme = localStorage.getItem('theme');
+                  var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (theme === 'dark' || (!theme && systemDark)) {
                     document.documentElement.classList.add('dark');
                   }
                 } catch (e) {}
@@ -45,7 +48,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="flex flex-col min-h-screen bg-white dark:bg-neutral-950 text-text dark:text-neutral-100 transition-colors duration-200">
+      <body className="flex min-h-screen flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white antialiased transition-colors">
         <ThemeProvider>
           <Header />
           <main className="flex-1">{children}</main>

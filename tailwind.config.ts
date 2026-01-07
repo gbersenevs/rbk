@@ -10,9 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // RBK Brand Colors - Calm neutral with dark purple accents
+        // RBK Brand Colors
+        // Purple accent (from logo)
         primary: {
-          DEFAULT: "#6D28D9", // Dark purple (Violet 700)
+          DEFAULT: "#6D28D9",
           50: "#F5F3FF",
           100: "#EDE9FE",
           200: "#DDD6FE",
@@ -24,6 +25,20 @@ const config: Config = {
           800: "#5B21B6",
           900: "#4C1D95",
           950: "#2E1065",
+        },
+        // Mint/Teal accent (from logo)
+        mint: {
+          DEFAULT: "#29D6AA",
+          50: "#ECFDF8",
+          100: "#D1FAE8",
+          200: "#A7F3D5",
+          300: "#6EE7BD",
+          400: "#34D9A5",
+          500: "#29D6AA",
+          600: "#0FAF87",
+          700: "#0D9070",
+          800: "#0E7159",
+          900: "#0D5D4A",
         },
         // Neutral grays
         neutral: {
@@ -39,14 +54,13 @@ const config: Config = {
           900: "#171717",
           950: "#0A0A0A",
         },
-        // Semantic colors
+        // Semantic colors (light mode)
         surface: "#FAFAFA",
         background: "#FFFFFF",
         text: {
           DEFAULT: "#171717",
           secondary: "#525252",
           muted: "#737373",
-          light: "#A3A3A3",
         },
         border: "#E5E5E5",
       },
@@ -60,24 +74,21 @@ const config: Config = {
           "Roboto",
           "sans-serif",
         ],
-        mono: [
-          "JetBrains Mono",
-          "Fira Code",
-          "Monaco",
-          "Consolas",
-          "monospace",
-        ],
       },
       backgroundImage: {
-        'gradient-subtle': 'linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)',
-        'gradient-subtle-dark': 'linear-gradient(180deg, #0A0A0A 0%, #171717 100%)',
+        // Light mode gradients
+        'gradient-hero': 'linear-gradient(135deg, #FFFFFF 0%, #F5F3FF 50%, #ECFDF8 100%)',
+        'gradient-section': 'linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #6D28D9 0%, #29D6AA 100%)',
+        // Dark mode gradients
+        'gradient-hero-dark': 'linear-gradient(135deg, #0A0A0A 0%, #1a1025 50%, #0d1f1a 100%)',
+        'gradient-section-dark': 'linear-gradient(180deg, #171717 0%, #0A0A0A 100%)',
       },
       boxShadow: {
-        'soft': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
+        'soft': '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03)',
-        'elevated': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.03)',
-        'soft-dark': '0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3)',
-        'card-dark': '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2)',
+        'glow-purple': '0 0 20px rgba(109, 40, 217, 0.15)',
+        'glow-mint': '0 0 20px rgba(41, 214, 170, 0.15)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

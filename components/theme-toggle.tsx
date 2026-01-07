@@ -12,12 +12,12 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  // Render placeholder during SSR to prevent hydration mismatch
+  // Render placeholder during SSR
   if (!mounted) {
     return (
       <button
         type="button"
-        className="p-2 text-text-secondary hover:text-text rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+        className="p-2 text-neutral-500 hover:text-neutral-900 dark:hover:text-white rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
         aria-label="Toggle theme"
       >
         <Sun className="w-4 h-4" />
@@ -29,7 +29,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="p-2 text-text-secondary hover:text-text dark:text-neutral-400 dark:hover:text-white rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+      className="p-2 text-neutral-500 hover:text-neutral-900 dark:hover:text-white rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       {theme === "light" ? (

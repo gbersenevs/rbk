@@ -22,7 +22,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "bg-white rounded-xl border border-border/50 shadow-card",
+        "bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-card",
         paddings[padding],
         hover && "transition-all duration-300 hover:shadow-soft hover:-translate-y-1",
         className
@@ -50,7 +50,7 @@ interface CardTitleProps {
 
 export function CardTitle({ children, className, as: Component = "h3" }: CardTitleProps) {
   return (
-    <Component className={cn("text-text font-semibold", className)}>
+    <Component className={cn("text-neutral-900 dark:text-white font-semibold", className)}>
       {children}
     </Component>
   );
@@ -62,7 +62,7 @@ interface CardContentProps {
 }
 
 export function CardContent({ children, className }: CardContentProps) {
-  return <div className={cn("text-text-muted", className)}>{children}</div>;
+  return <div className={cn("text-neutral-600 dark:text-neutral-400", className)}>{children}</div>;
 }
 
 interface CardFooterProps {
@@ -71,5 +71,5 @@ interface CardFooterProps {
 }
 
 export function CardFooter({ children, className }: CardFooterProps) {
-  return <div className={cn("mt-4 pt-4 border-t border-border/50", className)}>{children}</div>;
+  return <div className={cn("mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800", className)}>{children}</div>;
 }

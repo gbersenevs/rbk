@@ -1,64 +1,34 @@
 import type { Metadata } from "next";
-import { CheckCircle, ArrowRight, Mail } from "lucide-react";
-import { siteConfig } from "@/lib/site-config";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 
 export const metadata: Metadata = {
   title: "Thank You",
-  description: "Thank you for contacting RBK. We will respond within 1-2 business days.",
+  description: "Your message has been sent successfully. We will be in touch soon.",
 };
 
 export default function ThankYouPage() {
-  const { company, contact } = siteConfig;
-
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 bg-gradient-to-br from-white via-primary-50/30 to-mint-50/30 dark:from-neutral-950 dark:via-primary-950/20 dark:to-mint-900/10">
       <Container>
         <div className="max-w-xl mx-auto text-center">
-          {/* Success Icon */}
-          <div className="mb-8 inline-flex items-center justify-center">
-            <div className="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center">
-              <CheckCircle className="w-8 h-8 text-primary" />
-            </div>
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-mint-100 dark:bg-mint-900/30 rounded-full mb-6">
+            <CheckCircle2 className="w-8 h-8 text-mint-600 dark:text-mint-400" />
           </div>
-
-          <h1 className="text-3xl md:text-4xl font-semibold text-text dark:text-white mb-4">
+          
+          <h1 className="text-3xl md:text-4xl font-semibold mb-4">
             Thank you
           </h1>
           
-          <p className="text-text-secondary dark:text-neutral-400 mb-2">
-            Your message has been received.
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8">
+            Your message has been sent successfully. We will review your inquiry and get back to you within 1-2 business days.
           </p>
           
-          <p className="text-text-muted dark:text-neutral-500 mb-10">
-            {contact.form.successMessage}
-          </p>
-
-          {/* Actions */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Button href="/" variant="outline">
-              Back to home
-            </Button>
-            <Button href="/services">
-              View services
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
-
-          {/* Contact Info */}
-          <div className="inline-flex items-center gap-2 text-sm text-text-muted dark:text-neutral-500">
-            <Mail className="w-4 h-4" />
-            <span>
-              Questions?{" "}
-              <a 
-                href={`mailto:${company.email}`} 
-                className="text-primary hover:text-primary-800 dark:hover:text-primary-400 notranslate"
-              >
-                {company.email}
-              </a>
-            </span>
-          </div>
+          <Button href="/" variant="outline">
+            Back to homepage
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
         </div>
       </Container>
     </section>

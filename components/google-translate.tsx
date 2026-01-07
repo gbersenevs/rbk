@@ -29,7 +29,6 @@ const languages = [
   { code: "ru", label: "RU", name: "Russian" },
 ];
 
-// Get current language from cookie
 function getCurrentLanguage(): string {
   if (typeof document === "undefined") return "en";
   
@@ -47,14 +46,12 @@ function getCurrentLanguage(): string {
   return "en";
 }
 
-// Set translation cookies
 function setTranslationCookie(langCode: string) {
   const hostname = window.location.hostname;
   const expiry = new Date();
   expiry.setFullYear(expiry.getFullYear() + 1);
   const expiryStr = expiry.toUTCString();
 
-  // Clear existing cookies
   document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
   document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${hostname}`;
   document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${hostname}`;
@@ -70,9 +67,7 @@ function setTranslationCookie(langCode: string) {
 export function GoogleTranslate() {
   const [currentLang, setCurrentLang] = useState("en");
   const [isOpen, setIsOpen] = useState(false);
-  const [isReady, setIsReady] = useState(false);
 
-  // Remove Google Translate banner
   const removeBanner = useCallback(() => {
     const banners = document.querySelectorAll(
       ".goog-te-banner-frame, iframe.goog-te-banner-frame, body > .skiptranslate iframe"
@@ -85,7 +80,6 @@ export function GoogleTranslate() {
   useEffect(() => {
     setCurrentLang(getCurrentLanguage());
 
-    // Initialize Google Translate
     window.googleTranslateElementInit = () => {
       if (window.google?.translate?.TranslateElement) {
         new window.google.translate.TranslateElement(
@@ -96,11 +90,9 @@ export function GoogleTranslate() {
           },
           "google_translate_element"
         );
-        setIsReady(true);
       }
     };
 
-    // Periodically check for language changes and remove banner
     const interval = setInterval(() => {
       const detected = getCurrentLanguage();
       if (detected !== currentLang) {
@@ -109,7 +101,6 @@ export function GoogleTranslate() {
       removeBanner();
     }, 500);
 
-    // Initial cleanup
     setTimeout(removeBanner, 100);
     setTimeout(removeBanner, 500);
     setTimeout(removeBanner, 1000);
@@ -117,14 +108,12 @@ export function GoogleTranslate() {
     return () => clearInterval(interval);
   }, [currentLang, removeBanner]);
 
-  // Change language
   const changeLanguage = (langCode: string) => {
     if (langCode === currentLang) {
       setIsOpen(false);
       return;
     }
 
-    // Try using Google Translate's select element
     const selectElement = document.querySelector(".goog-te-combo") as HTMLSelectElement;
     
     if (selectElement && selectElement.options.length > 0) {
@@ -144,7 +133,6 @@ export function GoogleTranslate() {
       }
     }
 
-    // Fallback: Set cookie and reload
     setTranslationCookie(langCode);
     setIsOpen(false);
     window.location.reload();
@@ -154,13 +142,11 @@ export function GoogleTranslate() {
 
   return (
     <>
-      {/* Google Translate Script */}
       <Script
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         strategy="afterInteractive"
       />
 
-      {/* Hidden Google Translate element */}
       <div
         id="google_translate_element"
         style={{
@@ -171,29 +157,25 @@ export function GoogleTranslate() {
         }}
       />
 
-      {/* Language Selector */}
       <div className="relative notranslate" translate="no">
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1.5 px-2 py-1.5 text-sm text-text-secondary hover:text-text rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          className="flex items-center gap-1.5 px-2 py-1.5 text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-white rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
           aria-label="Select language"
         >
           <Globe className="w-4 h-4" />
           <span className="font-medium">{currentLanguage.label}</span>
         </button>
 
-        {/* Dropdown */}
         {isOpen && (
           <>
-            {/* Backdrop */}
             <div 
               className="fixed inset-0 z-40" 
               onClick={() => setIsOpen(false)}
             />
             
-            {/* Menu */}
-            <div className="absolute right-0 top-full mt-1 z-50 bg-white dark:bg-neutral-900 border border-border dark:border-neutral-700 rounded-lg shadow-lg py-1 min-w-[120px]">
+            <div className="absolute right-0 top-full mt-1 z-50 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg py-1 min-w-[120px]">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
@@ -203,11 +185,11 @@ export function GoogleTranslate() {
                     "w-full px-3 py-2 text-left text-sm transition-colors",
                     currentLang === lang.code
                       ? "bg-primary/10 text-primary font-medium"
-                      : "text-text-secondary hover:bg-neutral-50 dark:hover:bg-neutral-800"
+                      : "text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800"
                   )}
                 >
                   <span className="font-medium mr-2">{lang.label}</span>
-                  <span className="text-text-muted">{lang.name}</span>
+                  <span className="text-neutral-500">{lang.name}</span>
                 </button>
               ))}
             </div>

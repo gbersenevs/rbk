@@ -34,7 +34,7 @@ export function Collapsible({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="mt-4 inline-flex items-center gap-2 text-primary hover:text-primary-600 font-medium transition-colors"
+        className="mt-4 inline-flex items-center gap-2 text-primary hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
       >
         {isOpen ? collapsedText : triggerText}
         <ChevronDown
@@ -47,4 +47,3 @@ export function Collapsible({
     </div>
   );
 }
-

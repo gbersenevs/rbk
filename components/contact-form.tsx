@@ -60,12 +60,12 @@ export function ContactForm() {
 
   const inputClasses = (hasError: boolean) => cn(
     "w-full px-4 py-3 border rounded-lg transition-colors text-sm",
-    "bg-white dark:bg-neutral-800 text-text dark:text-white",
+    "bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white",
     "focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary",
-    "placeholder:text-text-muted dark:placeholder:text-neutral-500",
+    "placeholder:text-neutral-400 dark:placeholder:text-neutral-500",
     hasError 
-      ? "border-red-400 dark:border-red-500 focus:ring-red-200 dark:focus:ring-red-500/20 focus:border-red-400" 
-      : "border-border dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600"
+      ? "border-red-400 focus:ring-red-200 focus:border-red-400" 
+      : "border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600"
   );
 
   return (
@@ -88,7 +88,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-text dark:text-white mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-neutral-900 dark:text-white mb-2">
             {formConfig.fields.name.label} <span className="text-red-500">*</span>
           </label>
           <input
@@ -105,7 +105,7 @@ export function ContactForm() {
 
         {/* Company */}
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-text dark:text-white mb-2">
+          <label htmlFor="company" className="block text-sm font-medium text-neutral-900 dark:text-white mb-2">
             {formConfig.fields.company.label}
           </label>
           <input
@@ -119,7 +119,7 @@ export function ContactForm() {
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-text dark:text-white mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-neutral-900 dark:text-white mb-2">
             {formConfig.fields.email.label} <span className="text-red-500">*</span>
           </label>
           <input
@@ -136,7 +136,7 @@ export function ContactForm() {
 
         {/* Service Type */}
         <div>
-          <label htmlFor="serviceType" className="block text-sm font-medium text-text dark:text-white mb-2">
+          <label htmlFor="serviceType" className="block text-sm font-medium text-neutral-900 dark:text-white mb-2">
             {formConfig.fields.serviceType.label} <span className="text-red-500">*</span>
           </label>
           <select
@@ -162,7 +162,7 @@ export function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-text dark:text-white mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-neutral-900 dark:text-white mb-2">
           {formConfig.fields.message.label} <span className="text-red-500">*</span>
         </label>
         <textarea

@@ -16,9 +16,9 @@ const variants = {
   primary:
     "bg-primary text-white hover:bg-primary-800 focus:ring-primary",
   secondary:
-    "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 focus:ring-neutral-500",
+    "bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-100 focus:ring-neutral-500",
   outline:
-    "bg-transparent text-text dark:text-white border border-border dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-600 focus:ring-primary",
+    "bg-transparent text-neutral-900 dark:text-white border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 focus:ring-primary",
 };
 
 const sizes = {
