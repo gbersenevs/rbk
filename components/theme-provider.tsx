@@ -18,20 +18,19 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children, defaultTheme = "light" }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [theme, setThemeState] = useState<Theme>(defaultTheme);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const stored = localStorage.getItem("theme") as Theme | null;
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     
     if (stored) {
-      setTheme(stored);
+      setThemeState(stored);
     } else if (systemPrefersDark) {
-      setTheme("dark");
+      setThemeState("dark");
     }
-    
-    setMounted(true);
   }, []);
 
   useEffect(() => {
@@ -43,18 +42,13 @@ export function ThemeProvider({ children, defaultTheme = "light" }: ThemeProvide
     localStorage.setItem("theme", theme);
   }, [theme, mounted]);
 
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme);
   };
 
-  // Prevent flash of incorrect theme
-  if (!mounted) {
-    return (
-      <div className="contents" style={{ visibility: "hidden" }}>
-        {children}
-      </div>
-    );
-  }
+  const toggleTheme = () => {
+    setThemeState(prev => prev === "light" ? "dark" : "light");
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
@@ -65,8 +59,15 @@ export function ThemeProvider({ children, defaultTheme = "light" }: ThemeProvide
 
 export function useTheme() {
   const context = useContext(ThemeContext);
+  
+  // Return safe defaults during SSR or if used outside provider
   if (context === undefined) {
-    throw new Error("useTheme must be used within a ThemeProvider");
+    return {
+      theme: "light" as Theme,
+      setTheme: () => {},
+      toggleTheme: () => {},
+    };
   }
+  
   return context;
 }

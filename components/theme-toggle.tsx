@@ -12,15 +12,15 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  // Render placeholder during SSR
+  // Render a placeholder during SSR to prevent hydration mismatch
   if (!mounted) {
     return (
       <button
         type="button"
-        className="p-2 text-neutral-500 hover:text-neutral-900 dark:hover:text-white rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+        className="p-2 text-neutral-500 rounded-md"
         aria-label="Toggle theme"
       >
-        <Sun className="w-4 h-4" />
+        <div className="w-4 h-4" />
       </button>
     );
   }
