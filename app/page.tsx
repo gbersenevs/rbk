@@ -16,14 +16,14 @@ export default function HomePage() {
             <div className="w-12 h-1 bg-primary rounded-full mb-8" />
             
             {/* Main headline with line breaks */}
-            <h1 className="text-text mb-6">
+            <h1 className="text-text dark:text-white mb-6">
               <span className="block">{home.hero.headline}</span>
               {home.hero.sublines.map((line, i) => (
-                <span key={i} className="block text-text-secondary">{line}</span>
+                <span key={i} className="block text-text-secondary dark:text-neutral-400">{line}</span>
               ))}
             </h1>
             
-            <p className="text-lg text-text-secondary mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg text-text-secondary dark:text-neutral-400 mb-10 max-w-2xl leading-relaxed">
               {home.hero.description}
             </p>
             
@@ -36,14 +36,14 @@ export default function HomePage() {
       </section>
 
       {/* Approach Section */}
-      <section className="py-16 md:py-20 bg-neutral-50 border-y border-border">
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-border dark:border-neutral-800">
         <Container>
           <div className="max-w-3xl">
-            <h2 className="mb-6">{home.approach.title}</h2>
-            <p className="text-text-secondary mb-4 leading-relaxed">
+            <h2 className="text-text dark:text-white mb-6">{home.approach.title}</h2>
+            <p className="text-text-secondary dark:text-neutral-400 mb-4 leading-relaxed">
               {home.approach.intro}
             </p>
-            <p className="text-text font-medium">
+            <p className="text-text dark:text-white font-medium">
               {home.approach.goal}
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function HomePage() {
       {/* Three Principles Section */}
       <section className="py-16 md:py-24">
         <Container>
-          <h2 className="mb-12">{home.principles.title}</h2>
+          <h2 className="text-text dark:text-white mb-12">{home.principles.title}</h2>
           
           <div className="space-y-16">
             {home.principles.items.map((principle, index) => (
@@ -62,16 +62,16 @@ export default function HomePage() {
                 <div className="lg:col-span-4">
                   <div className="flex items-baseline gap-4 mb-2">
                     <span className="text-5xl font-semibold text-primary">{index + 1}</span>
-                    <h3 className="text-2xl">{principle.title}</h3>
+                    <h3 className="text-2xl text-text dark:text-white">{principle.title}</h3>
                   </div>
                 </div>
                 
                 {/* Content */}
                 <div className="lg:col-span-8">
-                  <p className="text-text-secondary mb-4 leading-relaxed">
+                  <p className="text-text-secondary dark:text-neutral-400 mb-4 leading-relaxed">
                     {principle.description}
                   </p>
-                  <p className="text-sm text-text-muted">
+                  <p className="text-sm text-text-muted dark:text-neutral-500">
                     {principle.detail}
                   </p>
                 </div>
@@ -82,37 +82,37 @@ export default function HomePage() {
       </section>
 
       {/* What We Do / Don't Do Section */}
-      <section className="py-16 md:py-24 bg-neutral-50 border-y border-border">
+      <section className="py-16 md:py-24 bg-neutral-50 dark:bg-neutral-900 border-y border-border dark:border-neutral-800">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* What We Do */}
             <div>
-              <h2 className="mb-6">{home.whatWeDo.title}</h2>
+              <h2 className="text-text dark:text-white mb-6">{home.whatWeDo.title}</h2>
               <ul className="space-y-3 mb-6">
                 {home.whatWeDo.items.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-text-secondary">{item}</span>
+                    <span className="text-text-secondary dark:text-neutral-400">{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-text-muted border-l-2 border-primary pl-4">
+              <p className="text-sm text-text-muted dark:text-neutral-500 border-l-2 border-primary pl-4">
                 {home.whatWeDo.closing}
               </p>
             </div>
 
             {/* What We Don't Do */}
             <div>
-              <h2 className="mb-6">{home.whatWeDoNot.title}</h2>
+              <h2 className="text-text dark:text-white mb-6">{home.whatWeDoNot.title}</h2>
               <ul className="space-y-3 mb-6">
                 {home.whatWeDoNot.items.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <X className="w-5 h-5 text-neutral-400 mt-0.5 flex-shrink-0" />
-                    <span className="text-text-secondary">{item}</span>
+                    <X className="w-5 h-5 text-neutral-400 dark:text-neutral-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-text-secondary dark:text-neutral-400">{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-text-muted border-l-2 border-neutral-300 pl-4">
+              <p className="text-sm text-text-muted dark:text-neutral-500 border-l-2 border-neutral-300 dark:border-neutral-700 pl-4">
                 {home.whatWeDoNot.closing}
               </p>
             </div>
@@ -124,13 +124,13 @@ export default function HomePage() {
       <section className="py-16 md:py-24">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="mb-4">{home.idealClient.title}</h2>
-            <p className="text-text-secondary mb-6">{home.idealClient.intro}</p>
+            <h2 className="text-text dark:text-white mb-4">{home.idealClient.title}</h2>
+            <p className="text-text-secondary dark:text-neutral-400 mb-6">{home.idealClient.intro}</p>
             <ul className="space-y-3">
               {home.idealClient.items.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0" />
-                  <span className="text-text-secondary">{item}</span>
+                  <span className="text-text-secondary dark:text-neutral-400">{item}</span>
                 </li>
               ))}
             </ul>
@@ -139,7 +139,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-neutral-900 text-white">
+      <section className="py-16 md:py-24 bg-neutral-900 dark:bg-neutral-950 border-t border-neutral-800">
         <Container>
           <div className="max-w-2xl">
             <h2 className="text-white mb-4">{home.cta.title}</h2>

@@ -9,7 +9,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-50 border-t border-border">
+    <footer className="bg-neutral-50 dark:bg-neutral-900 border-t border-border dark:border-neutral-800 transition-colors">
       <Container>
         <div className="py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -24,13 +24,13 @@ export function Footer() {
                   className="h-10 w-auto"
                 />
               </Link>
-              <p className="text-sm text-text-secondary mb-4 max-w-sm">
+              <p className="text-sm text-text-secondary dark:text-neutral-400 mb-4 max-w-sm">
                 {footer.tagline}
               </p>
-              <div className="space-y-2 text-sm text-text-muted">
+              <div className="space-y-2 text-sm text-text-muted dark:text-neutral-500">
                 <a
                   href={`mailto:${company.email}`}
-                  className="flex items-center gap-2 hover:text-text transition-colors notranslate"
+                  className="flex items-center gap-2 hover:text-text dark:hover:text-white transition-colors notranslate"
                 >
                   <Mail className="w-4 h-4" />
                   {company.email}
@@ -44,13 +44,13 @@ export function Footer() {
 
             {/* Navigation */}
             <div>
-              <h4 className="font-medium text-text mb-4 text-sm">{footer.quickLinks.title}</h4>
+              <h4 className="font-medium text-text dark:text-white mb-4 text-sm">{footer.quickLinks.title}</h4>
               <ul className="space-y-2">
                 {footer.quickLinks.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-text-secondary hover:text-text transition-colors"
+                      className="text-sm text-text-secondary dark:text-neutral-400 hover:text-text dark:hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -61,8 +61,8 @@ export function Footer() {
 
             {/* Legal */}
             <div>
-              <h4 className="font-medium text-text mb-4 text-sm notranslate">RBK</h4>
-              <ul className="space-y-2 text-sm text-text-muted notranslate">
+              <h4 className="font-medium text-text dark:text-white mb-4 text-sm notranslate">RBK</h4>
+              <ul className="space-y-2 text-sm text-text-muted dark:text-neutral-500 notranslate">
                 <li>{company.legalName}</li>
                 <li>Reg: {company.registrationNumber}</li>
                 <li>VAT: {company.vatNumber}</li>
@@ -72,8 +72,8 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="py-4 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-text-muted">
+        <div className="py-4 border-t border-border dark:border-neutral-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-text-muted dark:text-neutral-500">
             <p className="notranslate">© {currentYear} {company.legalName}</p>
             <p>{footer.cookieNotice}</p>
           </div>

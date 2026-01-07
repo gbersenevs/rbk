@@ -6,10 +6,11 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        // RBK Brand Colors - Calm, neutral with dark purple accents
+        // RBK Brand Colors - Calm neutral with dark purple accents
         primary: {
           DEFAULT: "#6D28D9", // Dark purple (Violet 700)
           50: "#F5F3FF",
@@ -24,7 +25,7 @@ const config: Config = {
           900: "#4C1D95",
           950: "#2E1065",
         },
-        // Neutral grays for calm aesthetic
+        // Neutral grays
         neutral: {
           50: "#FAFAFA",
           100: "#F5F5F5",
@@ -42,9 +43,9 @@ const config: Config = {
         surface: "#FAFAFA",
         background: "#FFFFFF",
         text: {
-          DEFAULT: "#171717", // Near black for strong readability
-          secondary: "#525252", // Medium gray for body text
-          muted: "#737373", // Lighter for subtle text
+          DEFAULT: "#171717",
+          secondary: "#525252",
+          muted: "#737373",
           light: "#A3A3A3",
         },
         border: "#E5E5E5",
@@ -69,11 +70,14 @@ const config: Config = {
       },
       backgroundImage: {
         'gradient-subtle': 'linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)',
+        'gradient-subtle-dark': 'linear-gradient(180deg, #0A0A0A 0%, #171717 100%)',
       },
       boxShadow: {
         'soft': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03)',
         'elevated': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.03)',
+        'soft-dark': '0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3)',
+        'card-dark': '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

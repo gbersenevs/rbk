@@ -23,11 +23,11 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-3xl">
             <div className="w-12 h-1 bg-primary rounded-full mb-8" />
-            <h1 className="mb-4">
+            <h1 className="text-text dark:text-white mb-4">
               {about.hero.title}
               <span className="notranslate">RBK</span>
             </h1>
-            <p className="text-xl text-text-secondary">{about.hero.subtitle}</p>
+            <p className="text-xl text-text-secondary dark:text-neutral-400">{about.hero.subtitle}</p>
           </div>
         </Container>
       </section>
@@ -36,9 +36,9 @@ export default function AboutPage() {
       <section className="pb-16 md:pb-24">
         <Container>
           <div className="max-w-3xl">
-            <h2 className="mb-6">{about.overview.title}</h2>
+            <h2 className="text-text dark:text-white mb-6">{about.overview.title}</h2>
             {about.overview.paragraphs.map((paragraph, index) => (
-              <p key={index} className="text-text-secondary leading-relaxed mb-4 last:mb-0">
+              <p key={index} className="text-text-secondary dark:text-neutral-400 leading-relaxed mb-4 last:mb-0">
                 {paragraph}
               </p>
             ))}
@@ -47,11 +47,11 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Rule */}
-      <section className="py-16 md:py-20 bg-neutral-50 border-y border-border">
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-border dark:border-neutral-800">
         <Container>
           <div className="max-w-3xl">
-            <h2 className="mb-6">{about.brandRule.title}</h2>
-            <p className="text-text-secondary mb-6">{about.brandRule.intro}</p>
+            <h2 className="text-text dark:text-white mb-6">{about.brandRule.title}</h2>
+            <p className="text-text-secondary dark:text-neutral-400 mb-6">{about.brandRule.intro}</p>
             
             <div className="space-y-4 mb-6">
               {about.brandRule.questions.map((question, index) => (
@@ -59,12 +59,12 @@ export default function AboutPage() {
                   <span className="w-6 h-6 bg-primary text-white rounded text-sm font-medium flex items-center justify-center flex-shrink-0">
                     {index + 1}
                   </span>
-                  <p className="text-text">{question}</p>
+                  <p className="text-text dark:text-white">{question}</p>
                 </div>
               ))}
             </div>
             
-            <p className="text-sm text-text-muted border-l-2 border-primary pl-4">
+            <p className="text-sm text-text-muted dark:text-neutral-500 border-l-2 border-primary pl-4">
               {about.brandRule.closing}
             </p>
           </div>
@@ -74,13 +74,13 @@ export default function AboutPage() {
       {/* Values */}
       <section className="py-16 md:py-24">
         <Container>
-          <h2 className="mb-12">{about.values.title}</h2>
+          <h2 className="text-text dark:text-white mb-12">{about.values.title}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {about.values.items.map((value) => (
               <div key={value.title}>
-                <h3 className="text-lg font-semibold text-text mb-2">{value.title}</h3>
-                <p className="text-text-secondary">{value.description}</p>
+                <h3 className="text-lg font-semibold text-text dark:text-white mb-2">{value.title}</h3>
+                <p className="text-text-secondary dark:text-neutral-400">{value.description}</p>
               </div>
             ))}
           </div>
@@ -88,27 +88,27 @@ export default function AboutPage() {
       </section>
 
       {/* Company Info */}
-      <section className="py-16 md:py-20 bg-neutral-50 border-y border-border">
+      <section className="py-16 md:py-20 bg-neutral-50 dark:bg-neutral-900 border-y border-border dark:border-neutral-800">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h4 className="text-sm font-medium text-text-muted mb-2">Company</h4>
-              <p className="notranslate">{company.legalName}</p>
+              <h4 className="text-sm font-medium text-text-muted dark:text-neutral-500 mb-2">Company</h4>
+              <p className="text-text dark:text-white notranslate">{company.legalName}</p>
             </div>
             <div>
-              <h4 className="text-sm font-medium text-text-muted mb-2">Location</h4>
-              <p className="notranslate">{company.address.city}, {company.address.country}</p>
+              <h4 className="text-sm font-medium text-text-muted dark:text-neutral-500 mb-2">Location</h4>
+              <p className="text-text dark:text-white notranslate">{company.address.city}, {company.address.country}</p>
             </div>
             <div>
-              <h4 className="text-sm font-medium text-text-muted mb-2">Established</h4>
-              <p>{company.establishedYear}</p>
+              <h4 className="text-sm font-medium text-text-muted dark:text-neutral-500 mb-2">Established</h4>
+              <p className="text-text dark:text-white">{company.establishedYear}</p>
             </div>
           </div>
         </Container>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-neutral-900 text-white">
+      <section className="py-16 md:py-24 bg-neutral-900 dark:bg-neutral-950 border-t border-neutral-800">
         <Container>
           <div className="max-w-2xl">
             <h2 className="text-white mb-4">Let's talk</h2>

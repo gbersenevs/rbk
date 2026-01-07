@@ -16,9 +16,9 @@ const variants = {
   primary:
     "bg-primary text-white hover:bg-primary-800 focus:ring-primary",
   secondary:
-    "bg-neutral-900 text-white hover:bg-neutral-800 focus:ring-neutral-500",
+    "bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 focus:ring-neutral-500",
   outline:
-    "bg-transparent text-text border border-border hover:bg-surface hover:border-neutral-300 focus:ring-primary",
+    "bg-transparent text-text dark:text-white border border-border dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-600 focus:ring-primary",
 };
 
 const sizes = {
@@ -39,7 +39,7 @@ export function Button({
 }: ButtonProps) {
   const baseClasses = cn(
     "inline-flex items-center justify-center font-medium rounded-lg transition-colors duration-200",
-    "focus:outline-none focus:ring-2 focus:ring-offset-2",
+    "focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-neutral-950",
     "disabled:opacity-50 disabled:cursor-not-allowed",
     variants[variant],
     sizes[size],
